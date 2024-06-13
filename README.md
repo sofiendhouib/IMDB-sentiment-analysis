@@ -1,4 +1,4 @@
-# Clarifications about the code
+# Code explanation
 
 ## Required librarie
 
