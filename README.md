@@ -14,3 +14,11 @@
 * `utils.py`: other useful functions
 * `./input/`: Directory contaning both the raw and cleaned data. The latter can be constructed by running the main file.
 * `./cv_results/`: Directory for saving the results of the grid search.
+
+## Web resources
+
+* [Elegeant text pre-processing with NLTK in sklearn pipeline | Medium](https://towardsdatascience.com/elegant-text-pre-processing-with-nltk-in-sklearn-pipeline-d6fe18b91eb8)
+
+* [Getting started with Text Preprocessing | Kaggle](https://www.kaggle.com/code/sudalairajkumar/getting-started-with-text-preprocessing/notebook)
+
+* 
