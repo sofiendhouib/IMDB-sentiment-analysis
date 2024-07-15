@@ -1,2 +1,4 @@
 *.tsv
 cv_results/*
+dataset/*
+aclimdb/*
