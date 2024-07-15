@@ -3,18 +3,6 @@ from nltk.corpus import stopwords
 from datetime import datetime
 from joblib import dump
 
-def download_if_non_existent(res_path, res_name):
-    """
-        Adopted from
-        https://towardsdatascience.com/elegant-text-pre-processing-with-nltk-in-sklearn-pipeline-d6fe18b91eb8
-    """
-    try:
-        nltk.data.find(res_path)
-    except LookupError:
-        print(f'resource {res_path} not found. Downloading now...')
-        nltk.download(res_name)
-
-download_if_non_existent('~/nltk_data/corpora/stopwords', 'stopwords')
 
 sw_nltk = stopwords.words('english')
 for w in ["no", "not", "while", "nor", "too"]:
