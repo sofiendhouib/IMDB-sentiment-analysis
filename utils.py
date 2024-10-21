@@ -1,14 +1,9 @@
 import nltk
-from nltk.corpus import stopwords
 from datetime import datetime
 from joblib import dump
 
 
-sw_nltk = stopwords.words('english')
-for w in ["no", "not", "while", "nor", "too"]:
-    sw_nltk.remove(w)
-for w in sw_nltk:
-    if w.endswith("n't"): sw_nltk.remove(w)
+
 
 def print_long(string_arg, line_length = 10):
     """ Given a long text or a list of words or ngrams, write the corresponding

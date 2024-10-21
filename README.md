@@ -22,3 +22,4 @@ The dataset can be downloaded from this [Kaggle link]([IMDB Dataset of 50K Movie
 ## Web resources
 
 * [Elegant text pre-processing with NLTK in sklearn pipeline | Medium](https://towardsdatascience.com/elegant-text-pre-processing-with-nltk-in-sklearn-pipeline-d6fe18b91eb8)
+* [Getting started with Text Preprocessing | Kaggle](https://www.kaggle.com/code/sudalairajkumar/getting-started-with-text-preprocessing/input)

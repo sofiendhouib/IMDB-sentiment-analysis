@@ -50,4 +50,3 @@ def model_set_params(model, cv_res, ind):
     if isinstance(params_dict, str): params_dict = eval(params_dict)
     model.set_params(**params_dict)
     return model
-    

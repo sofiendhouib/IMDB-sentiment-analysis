@@ -10,17 +10,17 @@ from itertools import chain
 from matplotlib import pyplot as plt
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 
-import utils, postprocessing, data, tuning
+import utils, postprocess, preprocess, tuning
 
 run_cross_valid = True
 load_grid_results = False
 
 
 # %%  # TODO put in a function
-df_train = data.load_clean_data(
+df_train = preprocess.load_clean_data(
     "./input/labeledTrainData.tsv", "./input/labeledTrainDataClean.tsv")
 
-df_train_sub = data.df_sample_stratified(
+df_train_sub = preprocess.df_sample_stratified(
     df_train, stratify="sentiment", frac=0.4, random_state=0)
 # df_train_sub = data.²clean_data(df_train_sub, cleaning_steps= [data.fix_typos])
 
@@ -90,24 +90,24 @@ if run_cross_valid or load_grid_results:
 model.fit(df_train["review"],df_train["sentiment"])
 
 #%%
-feature_effects= postprocessing.compute_feature_effects(model, df_train["review"], k= 20)
+feature_effects= postprocess.compute_feature_effects(model, df_train["review"], k= 20)
 
 #%%
 pd.Series(feature_effects).plot.barh()
 plt.show()
-disp, report = postprocessing.metric_analysis(model, df_train["review"], df_train["sentiment"])
+disp, report = postprocess.metric_analysis(model, df_train["review"], df_train["sentiment"])
 print(report)
 
 # %%
-df_test = data.load_clean_data(
+df_test = preprocess.load_clean_data(
     "./input/testData.tsv", "./input/testDataClean.tsv")
 
-feature_effects= postprocessing.compute_feature_effects(model, df_test["review"], k= 20)
+feature_effects= postprocess.compute_feature_effects(model, df_test["review"], k= 20)
 
 #%%
 pd.Series(feature_effects).plot.barh()
 plt.show()
-disp, report = postprocessing.metric_analysis(model, df_test["review"], df_test["sentiment"])
+disp, report = postprocess.metric_analysis(model, df_test["review"], df_test["sentiment"])
 print(report)
 
 # %%

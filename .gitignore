@@ -1,5 +1,7 @@
 *.tsv
 cv_results/*
-dataset/*
+data/*
 aclImdb/*
 __pycache__/*
+*.csv
+*.zip
